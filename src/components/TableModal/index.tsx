@@ -34,12 +34,12 @@ export function TableModal({ visible, onClose }: TableModalProps) {
               keyboardType='number-pad'
               onChangeText={setTable}
             />
-            <Button onPress={() => alert(table)}>
+            <Button onPress={() => alert(table)} disabled={table.length === 0}>
               Salvar
             </Button>
           </Form>
         </ModalBody>
       </Overlay>
-    </Modal>
+    </Modal >
   );
 }
