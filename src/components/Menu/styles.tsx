@@ -22,3 +22,9 @@ height: 1px;
 background: rgba(204, 204, 204, 0.3);
 margin: 24px 0px;
 `;
+
+export const AddToCartButton = styled.TouchableOpacity`
+position: absolute;
+bottom: 0;
+right: 0;
+`;
