@@ -15,6 +15,11 @@ import { useState } from 'react';
 
 export function Main() {
   const [isTableModalVisible, setIsTableModalVisible] = useState(false);
+
+  function handleSaveTable(table: string) {
+    alert(`Main: ${table}`);
+  }
+
   return (
     <>
       <Container>
@@ -38,8 +43,10 @@ export function Main() {
         </FooterContainer>
       </Footer>
 
-      <TableModal visible={isTableModalVisible}
+      <TableModal
+        visible={isTableModalVisible}
         onClose={() => setIsTableModalVisible(false)}
+        onSave={handleSaveTable}
       />
     </>
   );

@@ -8,9 +8,10 @@ import { Overlay, ModalBody, Header, Form, Input, } from './styles';
 interface TableModalProps {
   visible: boolean;
   onClose: () => void;
+  onSave: (table: string) => void;
 }
 
-export function TableModal({ visible, onClose }: TableModalProps) {
+export function TableModal({ visible, onClose, onSave }: TableModalProps) {
   const [table, setTable] = useState<string>('');
 
   return (
@@ -34,7 +35,7 @@ export function TableModal({ visible, onClose }: TableModalProps) {
               keyboardType='number-pad'
               onChangeText={setTable}
             />
-            <Button onPress={() => alert(table)} disabled={table.length === 0}>
+            <Button onPress={() => onSave(table)} disabled={table.length === 0}>
               Salvar
             </Button>
           </Form>
