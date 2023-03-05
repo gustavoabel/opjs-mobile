@@ -1,7 +1,9 @@
 import styled from 'styled-components/native';
 
 export const Product = styled.View`
-flex-direction: row`;
+flex-direction: row;
+align-items: center;
+`;
 
 export const ProductImage = styled.Image`
 width: 120px;
