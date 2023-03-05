@@ -12,7 +12,12 @@ interface TableModalProps {
 }
 
 export function TableModal({ visible, onClose, onSave }: TableModalProps) {
-  const [table, setTable] = useState<string>('');
+  const [table, setTable] = useState('');
+
+  function handleSave() {
+    onSave(table);
+    onClose();
+  }
 
   return (
     <Modal
@@ -35,7 +40,7 @@ export function TableModal({ visible, onClose, onSave }: TableModalProps) {
               keyboardType='number-pad'
               onChangeText={setTable}
             />
-            <Button onPress={() => onSave(table)} disabled={table.length === 0}>
+            <Button onPress={handleSave} disabled={table.length === 0}>
               Salvar
             </Button>
           </Form>
