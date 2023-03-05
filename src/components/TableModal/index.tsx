@@ -4,16 +4,22 @@ import { Close } from '../Icons/Close';
 import { Text } from '../Text';
 import { Overlay, ModalBody, Header, Form, Input, } from './styles';
 
-export function TableModal() {
+interface TableModalProps {
+  visible: boolean;
+  onClose: () => void;
+}
+
+export function TableModal({ visible, onClose }: TableModalProps) {
   return (
     <Modal
+      visible={visible}
       transparent
     >
       <Overlay behavior={Platform.OS === 'android' ? 'height' : 'padding'}>
         <ModalBody>
           <Header>
             <Text weight='600'>Informe a mesa</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onClose}>
               <Close color='#666' />
             </TouchableOpacity>
           </Header>
