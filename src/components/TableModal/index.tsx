@@ -9,7 +9,7 @@ export function TableModal() {
     <Modal
       transparent
     >
-      <Overlay>
+      <Overlay behavior='padding'>
         <ModalBody>
           <Header>
             <Text weight='600'>Informe a mesa</Text>
