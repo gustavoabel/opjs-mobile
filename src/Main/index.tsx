@@ -14,6 +14,7 @@ export function Main() {
   return (
     <>
       <Container>
+
         <Header />
         <CategoriesContainer>
           <Categories />
@@ -21,7 +22,6 @@ export function Main() {
 
         <MenuContainer>
           <Menu />
-
         </MenuContainer>
 
       </Container>

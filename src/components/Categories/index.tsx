@@ -31,7 +31,6 @@ export function Categories() {
                 {category.icon}
               </Text>
             </Icon>
-
             <Text size={14} weight="400" opacity={isSelected ? 1 : 0.5}>
               {category.name}
             </Text>
