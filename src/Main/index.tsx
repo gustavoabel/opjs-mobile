@@ -32,7 +32,7 @@ export function Main() {
 
       <Footer>
         <FooterContainer>
-          <Button onPress={() => alert('Novo Pedido')}>
+          <Button onPress={() => setIsTableModalVisible(true)}>
             Novo Pedido
           </Button>
         </FooterContainer>
