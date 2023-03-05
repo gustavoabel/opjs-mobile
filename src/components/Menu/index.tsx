@@ -19,9 +19,11 @@ export function Menu() {
             }}
           />
           <ProductDetails>
-            <Text>{product.name}</Text>
-            <Text>{product.description}</Text>
-            <Text>{product.price}</Text>
+            <Text weight='600'>{product.name}</Text>
+            <Text size={14} color="#666" style={{ marginVertical: 8 }}>
+              {product.description}</Text>
+            <Text size={14} weight="600">
+              {product.price}</Text>
           </ProductDetails>
         </Product>
       )}
