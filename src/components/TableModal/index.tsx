@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Modal, TouchableOpacity, Platform } from 'react-native';
 import { Button } from '../Button';
 import { Close } from '../Icons/Close';
@@ -10,6 +11,8 @@ interface TableModalProps {
 }
 
 export function TableModal({ visible, onClose }: TableModalProps) {
+  const [table, setTable] = useState<string>('');
+
   return (
     <Modal
       visible={visible}
@@ -29,8 +32,9 @@ export function TableModal({ visible, onClose }: TableModalProps) {
               placeholder='Número da mesa'
               placeholderTextColor={'#666'}
               keyboardType='number-pad'
+              onChangeText={setTable}
             />
-            <Button onPress={() => alert('Salvou')}>
+            <Button onPress={() => alert(table)}>
               Salvar
             </Button>
           </Form>
