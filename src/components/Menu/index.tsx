@@ -16,6 +16,12 @@ import { useState } from 'react';
 
 export function Menu() {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  function handleOpenModal(product) {
+    setIsModalVisible(true);
+    setSelectedProduct(product);
+  }
   return (
     <>
     <ProductModal
@@ -30,7 +36,7 @@ export function Menu() {
       keyExtractor={product => product._id}
       ItemSeparatorComponent={Separator}
       renderItem={({ item: product }) => (
-        <Product onPress={() => setIsModalVisible(true)}>
+        <Product onPress={() => handleOpenModal(product)}>
           <ProductImage
             source={{
               uri: `http://192.168.0.28:3001/uploads/${product.imagePath}`,
