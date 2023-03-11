@@ -5,7 +5,7 @@ import { PlusCircle } from '../Icons/PlusCircle';
 import { Text } from '../Text';
 
 import {
-  Product,
+  ProductContainer,
   ProductImage,
   ProductDetails,
   Separator,
@@ -18,7 +18,7 @@ export function Menu() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  function handleOpenModal(product) {
+  function handleOpenModal(product: Product) {
     setIsModalVisible(true);
     setSelectedProduct(product);
   }
@@ -37,7 +37,7 @@ export function Menu() {
       keyExtractor={product => product._id}
       ItemSeparatorComponent={Separator}
       renderItem={({ item: product }) => (
-        <Product onPress={() => handleOpenModal(product)}>
+        <ProductContainer onPress={() => handleOpenModal(product)}>
           <ProductImage
             source={{
               uri: `http://192.168.0.28:3001/uploads/${product.imagePath}`,
@@ -53,7 +53,7 @@ export function Menu() {
           <AddToCartButton>
             <PlusCircle />
           </AddToCartButton>
-        </Product>
+        </ProductContainer>
       )}
     />
     </>
