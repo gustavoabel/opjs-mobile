@@ -15,3 +15,10 @@ export const CloseButton = styled.TouchableOpacity`
   justify-content: center;
   margin: 24px;
 `;
+
+export const ModalBody = styled.View`
+background: #fafafa;
+flex: 1;
+`;
+
+export const Header = styled.View``;

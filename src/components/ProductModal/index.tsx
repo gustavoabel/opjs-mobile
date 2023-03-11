@@ -1,7 +1,7 @@
 import { Modal } from "react-native";
 import { Text } from "../Text";
 import { Product } from "../../types/Product";
-import { Image, CloseButton } from "./styles";
+import { Image, CloseButton, ModalBody, Header } from "./styles";
 import { Close } from "../Icons/Close";
 
 
@@ -33,6 +33,13 @@ export function ProductModal({ visible, onClose, product }: ProductModalProps) {
         </CloseButton>
 
       </Image>
+      <ModalBody>
+        <Header>
+          <Text weight="600" size={24}>{product.name}</Text>
+          <Text color="#666">{product.description}</Text>
+        </Header>
+      </ModalBody>
     </Modal>
+
   )
 }
