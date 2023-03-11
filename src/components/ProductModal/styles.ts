@@ -10,4 +10,6 @@ export const CloseButton = styled.TouchableOpacity`
   height: 32px;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 16px;
+  align-items: center;
+  justify-content: center;
 `;
