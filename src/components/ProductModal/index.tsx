@@ -28,7 +28,7 @@ export function ProductModal({ visible, onClose, product }: ProductModalProps) {
         uri: `http://192.168.0.28:3001/uploads/${product.imagePath}`,
       }}
       >
-        <CloseButton>
+        <CloseButton onPress={onClose}>
           <Close />
         </CloseButton>
 
