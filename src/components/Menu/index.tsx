@@ -11,9 +11,18 @@ import {
   Separator,
   AddToCartButton
 } from './styles';
+import { ProductModal } from '../ProductModal';
+import { useState } from 'react';
 
 export function Menu() {
+  const [isModalVisible, setIsModalVisible] = useState(false);
   return (
+    <>
+    <ProductModal
+    visible={isModalVisible}
+    onClose={() => setIsModalVisible(false)}
+    />
+
     <FlatList
       data={products}
       style={{ marginTop: 32 }}
@@ -21,7 +30,7 @@ export function Menu() {
       keyExtractor={product => product._id}
       ItemSeparatorComponent={Separator}
       renderItem={({ item: product }) => (
-        <Product>
+        <Product onPress={() => setIsModalVisible(true)}>
           <ProductImage
             source={{
               uri: `http://192.168.0.28:3001/uploads/${product.imagePath}`,
@@ -40,5 +49,6 @@ export function Menu() {
         </Product>
       )}
     />
+    </>
   );
 }
