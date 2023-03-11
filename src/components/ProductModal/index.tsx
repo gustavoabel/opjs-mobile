@@ -6,7 +6,7 @@ import { Product } from "../../types/Product";
 interface ProductModalProps {
   visible: boolean;
   onClose: () => void;
-  product: Product;
+  product: null | Product;
 }
 
 export function ProductModal({ visible, onClose }: ProductModalProps) {
