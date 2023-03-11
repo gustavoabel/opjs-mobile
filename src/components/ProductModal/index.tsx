@@ -1,6 +1,7 @@
 import { Modal } from "react-native";
 import { Text } from "../Text";
 import { Product } from "../../types/Product";
+import { Image } from "./styles";
 
 
 interface ProductModalProps {
@@ -9,7 +10,11 @@ interface ProductModalProps {
   product: null | Product;
 }
 
-export function ProductModal({ visible, onClose }: ProductModalProps) {
+export function ProductModal({ visible, onClose, product }: ProductModalProps) {
+  if (!product) {
+    return null;
+  }
+
   return(
     <Modal
     visible={visible}
@@ -17,9 +22,11 @@ export function ProductModal({ visible, onClose }: ProductModalProps) {
     presentationStyle="pageSheet"
     onRequestClose={onClose}
     >
-      <Text>
-        ProductModal
-      </Text>
+      <Image
+      source={{
+        uri: `http://192.168.0.28:3001/uploads/${product?.imagePath}`,
+      }}
+      ></Image>
     </Modal>
   )
 }
