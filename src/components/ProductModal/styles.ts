@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 export const Image = styled.ImageBackground`
  width: 100%;
  height: 200px;
+ align-items: flex-end;
 `;
 
 export const CloseButton = styled.TouchableOpacity`
@@ -12,4 +13,5 @@ export const CloseButton = styled.TouchableOpacity`
   border-radius: 16px;
   align-items: center;
   justify-content: center;
+  margin: 24px;
 `;
