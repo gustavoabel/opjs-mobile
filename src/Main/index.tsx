@@ -38,7 +38,6 @@ export function Main() {
     setSelectedTable('');
   }
 
-
   return (
     <>
       <Container>

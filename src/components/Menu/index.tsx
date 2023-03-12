@@ -11,6 +11,7 @@ import {
   Separator,
   AddToCartButton
 } from './styles';
+
 import { ProductModal } from '../ProductModal';
 import { useState } from 'react';
 import { Product } from '../../types/Product';
